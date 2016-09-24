@@ -1,9 +1,11 @@
-package com.github.fidelity.lio;
+package com.github.fidelity.lio.ui.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.github.fidelity.lio.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

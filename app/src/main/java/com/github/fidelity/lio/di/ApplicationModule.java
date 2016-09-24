@@ -1,4 +1,4 @@
-package com.github.fidelity.lio;
+package com.github.fidelity.lio.di;
 
 
 import android.app.Application;
