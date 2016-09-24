@@ -27,10 +27,9 @@ dependencies {
 
     compile compileDependencies.butterknife
     compile compileDependencies.dagger2
-    compile compileDependencies.expandable_recyclerview
 
     apt compileDependencies.dagger2_compiler
-    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    apt compileDependencies.butterknife_compiler
 
     compile 'com.android.support:appcompat-v7:24.2.0'
 }

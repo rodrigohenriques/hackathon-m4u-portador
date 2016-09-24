@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+
+def compileDependencies = rootProject.ext.dependencies
+def testDependencies = rootProject.ext.testDependencies
 
 android {
     compileSdkVersion 24
@@ -19,7 +23,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
+    compile compileDependencies.dagger2
+    apt compileDependencies.dagger2_compiler
+    compile compileDependencies.okhttp3_logging_interceptor
     compile 'com.android.support:appcompat-v7:24.2.0'
+
+    compile compileDependencies.retrofit
+    compile compileDependencies.retrofit_converter_gson
+    compile compileDependencies.retrofit_rx_java
+    compile compileDependencies.rxandroid
 }
