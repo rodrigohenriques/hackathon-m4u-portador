@@ -18,8 +18,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.registerButton)
-    public void registeButtonOnClick(View view) {
+    public void registerButtonOnClick(View view) {
         Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.loginButton)
+    public void loginButtonOnClick(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }
