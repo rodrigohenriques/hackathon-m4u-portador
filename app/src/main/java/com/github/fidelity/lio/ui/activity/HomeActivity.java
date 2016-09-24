@@ -13,7 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.github.fidelity.lio.R;
+import com.github.fidelity.lio.ui.fragment.AcceptanceNetworkFragment;
+import com.github.fidelity.lio.ui.fragment.HistoryFragment;
 import com.github.fidelity.lio.ui.fragment.InformationFragment;
+import com.github.fidelity.lio.ui.fragment.ProductsFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -78,30 +81,26 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        selectItem(id);
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-            selectItem(id);
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    private void selectItem(int position) {
-        // Create a new fragment and specify the planet to show based on position
-        Fragment fragment = new InformationFragment();
+    private void selectItem(int id) {
+        Fragment fragment = null;
+        if (id == R.id.information) {
+            fragment = new InformationFragment();
+        } else if (id == R.id.products) {
+            fragment = new ProductsFragment();
+        } else if (id == R.id.history) {
+            fragment = new HistoryFragment();
+        } else if (id == R.id.acceptance_network) {
+            fragment = new AcceptanceNetworkFragment();
+        }
+
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.content_frame, fragment)
