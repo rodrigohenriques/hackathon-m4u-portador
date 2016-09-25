@@ -23,7 +23,7 @@
         <activity
             android:name=".ui.activity.HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEYY"
@@ -32,7 +32,8 @@
         <activity
             android:name=".ui.activity.ProfileActivity"
             android:label="@string/title_activity_profile"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.activity.ProductDetaliedActivity"></activity>
     </application>
 
 </manifest>

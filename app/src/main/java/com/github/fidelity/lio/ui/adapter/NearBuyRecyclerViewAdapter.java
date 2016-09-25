@@ -1,5 +1,6 @@
 package com.github.fidelity.lio.ui.adapter;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.Product;
 import com.github.fidelity.lio.R;
+import com.github.fidelity.lio.ui.activity.ProductDetaliedActivity;
 
 import java.util.List;
 
@@ -35,14 +37,20 @@ public class NearBuyRecyclerViewAdapter extends RecyclerView.Adapter<NearBuyRecy
         return productList.size();
     }
 
+    private View productContainer;
+
     public class NearBuyViewHolder extends RecyclerView.ViewHolder {
 
         public NearBuyViewHolder(View itemView) {
             super(itemView);
+            productContainer = itemView;
         }
 
         public void buildItem(Product product) {
-
+            productContainer.setOnClickListener(view -> {
+                Intent intent = new Intent(productContainer.getContext(), ProductDetaliedActivity.class);
+                productContainer.getContext().startActivity(intent);
+            });
         }
     }
 
