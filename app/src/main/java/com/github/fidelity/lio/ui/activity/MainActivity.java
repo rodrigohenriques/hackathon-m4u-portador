@@ -1,6 +1,7 @@
 package com.github.fidelity.lio.ui.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -13,9 +14,11 @@ import android.widget.ImageView;
 import com.github.fidelity.lio.R;
 import com.github.fidelity.lio.ui.fragment.WelcomeWizardFragment;
 
+import butterknife.BindDrawable;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnPageChange;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.oval_3)
     ImageView ovalThree;
+
+    @BindDrawable(R.drawable.oval_button_white)
+    Drawable whiteOvalButton;
+
+    @BindDrawable(R.drawable.overlay_oval_button)
+    Drawable overlayWhiteOvalButton;
 
 
     @Override
@@ -70,5 +79,37 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
 
+    }
+
+    @OnPageChange(R.id.pager)
+    public void onPageSelected(int position) {
+        switch (position) {
+            case 0:
+                changeColorIndicator(true, false, false);
+                break;
+            case 1:
+                changeColorIndicator(false, true, false);
+                break;
+            case 2:
+                changeColorIndicator(false, false, true);
+                break;
+        }
+    }
+
+    private void changeColorIndicator(boolean one, boolean two, boolean three) {
+        ovalOne.setBackgroundDrawable(overlayWhiteOvalButton);
+        ovalTwo.setBackgroundDrawable(overlayWhiteOvalButton);
+        ovalThree.setBackgroundDrawable(overlayWhiteOvalButton);
+        if (one) {
+            ovalOne.setBackgroundDrawable(whiteOvalButton);
+        }
+
+        if (two) {
+            ovalTwo.setBackgroundDrawable(whiteOvalButton);
+        }
+
+        if (three) {
+            ovalThree.setBackgroundDrawable(whiteOvalButton);
+        }
     }
 }
