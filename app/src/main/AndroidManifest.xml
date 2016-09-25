@@ -23,14 +23,16 @@
         <activity
             android:name=".ui.activity.HomeActivity"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme">
-
-        </activity>
+            android:theme="@style/AppTheme"></activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEYY"
             android:value="AIzaSyA2cSgZXK0dNEXc0TlGzCEadlvq94HznW0" />
-    </application>
 
+        <activity
+            android:name=".ui.activity.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/AppTheme"></activity>
+    </application>
 
 </manifest>
