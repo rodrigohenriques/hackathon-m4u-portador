@@ -12,7 +12,6 @@ import com.github.fidelity.lio.R;
 public class WelcomeWizardFragment extends Fragment {
 
     private View view;
-    private int layout;
 
     public static WelcomeWizardFragment newInstance(int pageNumber) {
         Bundle args = new Bundle();
@@ -29,16 +28,17 @@ public class WelcomeWizardFragment extends Fragment {
         int pageNumber = getArguments().getInt(WelcomeWizardFragment.class.getName());
 
         switch (pageNumber) {
+            case 0:
+                view = inflater.inflate(R.layout.fragment_step_one_wizzard_how_to_use_welcome, container, false);
+                break;
             case 1:
-                layout = R.layout.fragment_step_two_wizzard_how_to_use_welcome;
-                view = inflater.inflate(layout, container, false);
+                view = inflater.inflate(R.layout.fragment_step_two_wizzard_how_to_use_welcome, container, false);
                 break;
             case 2:
-                layout = R.layout.fragment_step_three_wizzard_how_to_use_welcome;
+                view = inflater.inflate(R.layout.fragment_step_three_wizzard_how_to_use_welcome, container, false);
                 break;
             default:
-                layout = R.layout.fragment_step_one_wizzard_how_to_use_welcome;
-                view = inflater.inflate(layout, container, false);
+                view = inflater.inflate(R.layout.fragment_step_one_wizzard_how_to_use_welcome, container, false);
                 break;
         }
 
