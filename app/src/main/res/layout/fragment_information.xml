@@ -8,11 +8,30 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OFERTAS DO DIA"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="70dp"
+        android:text="PRÓXIMOS A VOCÊ"
         android:textSize="20dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/nearBuyRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="70dp"
+        android:text="VIZUALIZADOS RECENTEMENTE"
+        android:textSize="20dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recentVisualizedRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

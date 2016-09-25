@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.example.Product;
 import com.github.fidelity.lio.R;
 import com.github.fidelity.lio.ui.adapter.NearBuyRecyclerViewAdapter;
+import com.github.fidelity.lio.ui.adapter.RecentVisualizedRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,8 @@ public class InformationFragment extends Fragment {
     @BindView(R.id.nearBuyRecyclerView)
     RecyclerView nearBuyRecyclerView;
 
+    @BindView(R.id.recentVisualizedRecyclerView)
+    RecyclerView recentVisualizedRecyclerView;
 
     public InformationFragment() {
     }
@@ -46,6 +49,11 @@ public class InformationFragment extends Fragment {
         NearBuyRecyclerViewAdapter nearBuyRecyclerViewAdapter = new NearBuyRecyclerViewAdapter(getProductList());
         nearBuyRecyclerView.setAdapter(nearBuyRecyclerViewAdapter);
         nearBuyRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        RecentVisualizedRecyclerViewAdapter recentVisualizedRecyclerViewAdapter = new RecentVisualizedRecyclerViewAdapter(getProductList());
+        recentVisualizedRecyclerView.setAdapter(recentVisualizedRecyclerViewAdapter);
+        recentVisualizedRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+
         return view;
     }
 
