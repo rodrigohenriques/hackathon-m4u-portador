@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@drawable/background"
     android:fitsSystemWindows="true"
     android:padding="@dimen/activity_horizontal_margin"
     tools:context=".ui.activity.RegisterActivity">
@@ -12,22 +12,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:gravity="center"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/icone_login" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="20dp">
 
             <EditText
                 android:id="@+id/emailField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_mail_black_24dp"
+                android:drawablePadding="7dp"
+                android:foregroundTint="@android:color/white"
                 android:hint="Email"
-                android:imeOptions="actionDone"
+                android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLength="4"
                 android:singleLine="true"
+                android:textColor="@android:color/white"
                 android:textSize="@dimen/size_1" />
 
 
@@ -42,11 +52,16 @@
                 android:id="@+id/passwordConfirmationField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_lock_black_24dp"
+                android:drawablePadding="7dp"
+                android:foregroundTint="@android:color/white"
                 android:hint="Senha"
                 android:imeOptions="actionDone"
                 android:inputType="number"
                 android:maxLength="4"
                 android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
                 android:textSize="@dimen/size_1" />
 
 
@@ -58,10 +73,11 @@
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="30dp"
-            android:background="@android:color/holo_blue_bright"
+            android:background="@drawable/oval_button_yellow"
             android:gravity="center"
             android:text="CONECTAR"
             android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="@dimen/size_2" />
 
     </LinearLayout>
